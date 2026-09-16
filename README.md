@@ -9,12 +9,12 @@ encoding those frames again with the LTX VAE.
 
 ## Status
 
-Experimental. The implementation follows the released NVIDIA Sol-H3-Spark
-geometry and Conv3D architecture. The nodes have completed an end-to-end run in
-a PC ComfyUI installation. The latent conversion preserved the source subject
-in that test, while the subsequent high-noise LTX refinement changed identity.
-Treat strict Ref2VA identity preservation as unsupported and validate workflows
-with fixed seeds and short clips before production use.
+Released. The implementation follows the NVIDIA Sol-H3-Spark geometry and
+Conv3D architecture and has completed an end-to-end run in a PC ComfyUI
+installation. The adapter conversion preserved the source content in that
+test. Identity changes introduced later by an LTX refinement sampler are a
+property of that downstream workflow and are outside this node package's
+conversion boundary.
 
 ## Nodes
 
@@ -155,9 +155,12 @@ not a standard ComfyUI `CONDITIONING` object and is not loaded by these nodes.
 - Pixel width and height must be divisible by 32.
 - The node infers the H3 `17k+5` pixel duration from its `5k+2` latent grid.
 - This package does not install or patch Sol-Attn, H3, LTX, or ComfyUI itself.
+- This package converts video latents only. It does not translate H3 text,
+  image-reference, video-reference, or audio-reference conditioning into LTX
+  conditioning.
 - Sol-H3-Spark passes generated H3 latents, not H3 reference-conditioning
-  activations, into Stage 2. The generic LTX refinement prompt does not
-  guarantee reference identity preservation.
+  activations, into Stage 2. Any identity behavior after conversion depends on
+  the downstream LTX model, conditioning, sampler, and sigma schedule.
 
 ## Development checks
 
