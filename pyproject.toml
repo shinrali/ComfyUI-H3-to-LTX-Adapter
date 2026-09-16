@@ -1,0 +1,18 @@
+[project]
+name = "comfyui-h3-to-ltx-adapter"
+version = "0.1.0"
+description = "ComfyUI nodes for the Efficient-Large-Model H3-to-LTX latent adapter"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+  "safetensors>=0.4.3",
+]
+
+[project.urls]
+Repository = "https://github.com/shinrali/ComfyUI-H3-to-LTX-Adapter"
+Upstream = "https://github.com/NVlabs/Sana/tree/sol-engine/models/minimax_h3/Sol-H3-Spark"
+Weights = "https://huggingface.co/Efficient-Large-Model/H3-to-LTX-Latent-Adapter"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

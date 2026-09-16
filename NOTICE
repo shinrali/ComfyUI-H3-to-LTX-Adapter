@@ -1,0 +1,10 @@
+ComfyUI-H3-to-LTX-Adapter
+Copyright 2026 Pixion Film Pty Ltd
+
+The adapter architecture, latent statistics, and geometry implementation are
+adapted from NVlabs/Sana, branch sol-engine, models/minimax_h3/Sol-H3-Spark,
+which is distributed under the Apache License 2.0.
+
+MiniMax H3, LTX-2.5, ComfyUI, and the H3-to-LTX adapter model weights are
+third-party components. Their respective licenses and model-use terms continue
+to apply. Model weights are not included in this repository.
